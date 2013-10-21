@@ -16,6 +16,7 @@ SELECT      selecionar|escolher
 INSERT		inserir|introduzir|intercalar
 UPDATE		atualizar|modernizar
 DELETE		apagar|anular|cancelar
+FROM		de
 WHERE		onde|aonde|com
 GROUP_BY	agrupar|associar|combinar
 HAVING		ter|haver|possuir
@@ -42,6 +43,7 @@ JOIN		ligar|juntar|unir
 {INSERT}			{return TK_INSERT;}
 {UPDATE}			{return TK_UPDATE;}
 {DELETE}			{return TK_DELETE;}
+{FROM}              {return TK_FROM;}
 {WHERE}				{return TK_WHERE;}
 {GROUP_BY}			{return TK_GROUPBY;}
 {HAVING}			{return TK_HAVING;}
@@ -49,27 +51,10 @@ JOIN		ligar|juntar|unir
 {JOIN}				{return TK_JOIN;}
 
 "=="				{return TK_IQUALIQUAL;}
-"++"				{return TK_PLUSPLUS;}
-"--"				{return TK_MINUSMINUS;}
 ">="				{return TK_GREATERORIQUAL;}
 "<="				{return TK_LESSOREQUAL;}
-"+="				{return TK_PLUSEQUAL;}
-"-="				{return TK_LESSEQUAL;}
-"*="				{return TK_MULTEQUAL;}
-"/="				{return TK_DIVEQUAL;}
-"!="				{return TK_NOTEQUAL;}
 "||"				{return TK_OR;}
 "&&"				{return TK_AND;}
-"..."				{return TK_TRIPOINTS;}
-"char"				{return TK_CHAR;}
-"int"				{return TK_INT;}
-"float"				{return TK_FLOAT;}
-"void"				{return TK_VOID;}
-"if"				{return TK_IF;}
-"else"				{return TK_ELSE;}
-"while"				{return TK_WHILE;}
-"return"			{return TK_RETURN;}
-"new"				{return TK_NEW;}
 
 (""|"-"){DIGITS}+		{var.intNumber = atoi(yytext);
 				 return TK_INTERGER;}
@@ -77,41 +62,12 @@ JOIN		ligar|juntar|unir
 ("+"{DIGITS}+|""|"-"{DIGITS}+){DIGITS}*(""|"."{DIGITS}*)(""|"e"("+"|"-"|""){DIGITS}+) {var.floatNumber =  (float) atof(yytext);
 								     	  	       return TK_FLOATNUMBER;}
 
-"0x"{HEXA}+			{var.intNumber = hexToInt(yytext);
-				 return TK_INTERGER;}
-
 {CHAR}+				{var.String = (char*) malloc(sizeof(yytext));
 			 	 strcpy(var.String, yytext);
 			 	 return TK_ID;}
 
 .				{return yytext;}
 %%
-int hexToInt(char* num)
-{
-	int i = 2, tam = strlen(num) - 3;
-	int result = 0;
-	while(i < strlen(num))
-	{
-		if(num[i] == 'a' || num[i] == 'A')
-			result = result + 10*pow(16,tam);
-		else if(num[i] == 'b' || num[i] == 'B')
-			result = result + 11*pow(16,tam);
-		else if(num[i] == 'c' || num[i] == 'C')
-			result = result + 12*pow(16,tam);
-		else if(num[i] == 'd' || num[i] == 'D')
-			result = result + 13*pow(16,tam);
-		else if(num[i] == 'e' || num[i] == 'E')
-			result = result + 14*pow(16,tam);
-		else if(num[i] == 'f' || num[i] == 'F')
-			result = result + 15*pow(16,tam);
-		else
-			result = result + (num[i]-48)*pow(16,tam);
-		i++;
-		tam--;
-	}
-	return result;
-}
-
 
 void cleanString(char* string)
 {
