@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>currentDocument</key>
+	<string>Documents/PUC/PF/projetoFinal/parser/yacc.y</string>
+	<key>documents</key>
+	<array>
+		<dict>
+			<key>filename</key>
+			<string>lex_main.c</string>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>lex_rules.l</string>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>yacc_main.c</string>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>yacc.tab.c</string>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>yacc.tab.h</string>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>yacc.y</string>
+			<key>lastUsed</key>
+			<date>2013-10-21T22:23:56Z</date>
+			<key>selected</key>
+			<true/>
+		</dict>
+	</array>
+	<key>fileHierarchyDrawerWidth</key>
+	<integer>200</integer>
+	<key>metaData</key>
+	<dict>
+		<key>Documents/PUC/PF/projetoFinal/parser/yacc.y</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>0</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>3</integer>
+		</dict>
+	</dict>
+	<key>openDocuments</key>
+	<array>
+		<string>Documents/PUC/PF/projetoFinal/parser/yacc.y</string>
+	</array>
+	<key>showFileHierarchyDrawer</key>
+	<true/>
+	<key>windowFrame</key>
+	<string>{{210, 78}, {1070, 700}}</string>
+</dict>
+</plist>

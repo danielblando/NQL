@@ -40,66 +40,50 @@
       know about them.  */
    enum yytokentype {
      TK_ID = 258,
-     TK_PLUSPLUS = 259,
-     TK_MINUSMINUS = 260,
-     TK_INT = 261,
-     TK_CHAR = 262,
-     TK_FLOAT = 263,
-     TK_VOID = 264,
-     TK_IF = 265,
-     TK_WHILE = 266,
-     TK_DO = 267,
-     TK_NEW = 268,
-     TK_TRIPOINTS = 269,
-     TK_RETURN = 270,
-     TK_INTERGER = 271,
-     TK_FLOATNUMBER = 272,
-     TK_STRING = 273,
-     UMINUS = 274,
-     TK_LESSOREQUAL = 275,
-     TK_GREATERORIQUAL = 276,
-     TK_NOTEQUAL = 277,
-     TK_IQUALIQUAL = 278,
-     TK_AND = 279,
-     TK_OR = 280,
-     TK_DIVEQUAL = 281,
-     TK_MULTEQUAL = 282,
-     TK_LESSEQUAL = 283,
-     TK_PLUSEQUAL = 284,
-     ELSE = 285,
-     TK_ELSE = 286
+     TK_GREATERORIQUAL = 259,
+     TK_LESSOREQUAL = 260,
+     TK_IQUALIQUAL = 261,
+     TK_NOTEQUAL = 262,
+     TK_OR = 263,
+     TK_AND = 264,
+     TK_SELECT = 265,
+     TK_INSERT = 266,
+     TK_UPDATE = 267,
+     TK_DELETE = 268,
+     TK_FROM = 269,
+     TK_WHERE = 270,
+     TK_GROUPBY = 271,
+     TK_HAVING = 272,
+     TK_ORDERBY = 273,
+     TK_JOIN = 274,
+     TK_INTERGER = 275,
+     TK_FLOATNUMBER = 276,
+     TK_STRING = 277,
+     UMINUS = 278
    };
 #endif
 /* Tokens.  */
 #define TK_ID 258
-#define TK_PLUSPLUS 259
-#define TK_MINUSMINUS 260
-#define TK_INT 261
-#define TK_CHAR 262
-#define TK_FLOAT 263
-#define TK_VOID 264
-#define TK_IF 265
-#define TK_WHILE 266
-#define TK_DO 267
-#define TK_NEW 268
-#define TK_TRIPOINTS 269
-#define TK_RETURN 270
-#define TK_INTERGER 271
-#define TK_FLOATNUMBER 272
-#define TK_STRING 273
-#define UMINUS 274
-#define TK_LESSOREQUAL 275
-#define TK_GREATERORIQUAL 276
-#define TK_NOTEQUAL 277
-#define TK_IQUALIQUAL 278
-#define TK_AND 279
-#define TK_OR 280
-#define TK_DIVEQUAL 281
-#define TK_MULTEQUAL 282
-#define TK_LESSEQUAL 283
-#define TK_PLUSEQUAL 284
-#define ELSE 285
-#define TK_ELSE 286
+#define TK_GREATERORIQUAL 259
+#define TK_LESSOREQUAL 260
+#define TK_IQUALIQUAL 261
+#define TK_NOTEQUAL 262
+#define TK_OR 263
+#define TK_AND 264
+#define TK_SELECT 265
+#define TK_INSERT 266
+#define TK_UPDATE 267
+#define TK_DELETE 268
+#define TK_FROM 269
+#define TK_WHERE 270
+#define TK_GROUPBY 271
+#define TK_HAVING 272
+#define TK_ORDERBY 273
+#define TK_JOIN 274
+#define TK_INTERGER 275
+#define TK_FLOATNUMBER 276
+#define TK_STRING 277
+#define UMINUS 278
 
 
 
@@ -113,7 +97,7 @@ typedef union YYSTYPE
 	char* string;
 }
 /* Line 1529 of yacc.c.  */
-#line 117 "yacc.tab.h"
+#line 101 "yacc.tab.h"
 	YYSTYPE;
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1

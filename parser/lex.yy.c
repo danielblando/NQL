@@ -610,10 +610,11 @@ char *yytext;
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <math.h>
-#include "lex_tokens.h" 
+#include "yacc.tab.h"
 
-#line 617 "lex.yy.c"
+void cleanString(char* string);
+
+#line 618 "lex.yy.c"
 
 #define INITIAL 0
 #define COMMENT 1
@@ -797,9 +798,9 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
     
-#line 27 "lex_rules.l"
+#line 28 "lex_rules.l"
 
-#line 803 "lex.yy.c"
+#line 804 "lex.yy.c"
 
 	if ( !(yy_init) )
 		{
@@ -885,145 +886,145 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 /* rule 1 can match eol */
 YY_RULE_SETUP
-#line 28 "lex_rules.l"
+#line 29 "lex_rules.l"
 { }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 30 "lex_rules.l"
+#line 31 "lex_rules.l"
 {BEGIN(COMMENT);}
 	YY_BREAK
 
 case 3:
 /* rule 3 can match eol */
 YY_RULE_SETUP
-#line 32 "lex_rules.l"
+#line 33 "lex_rules.l"
 { }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 33 "lex_rules.l"
+#line 34 "lex_rules.l"
 { }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 34 "lex_rules.l"
+#line 35 "lex_rules.l"
 {BEGIN(INITIAL);}
 	YY_BREAK
 
 case 6:
 YY_RULE_SETUP
-#line 37 "lex_rules.l"
-{var.String = (char*) malloc(strlen(yytext));
-				 strcpy(var.String,yytext);
-				 //cleanString(var.String);
+#line 38 "lex_rules.l"
+{yylval.string = (char*) malloc(strlen(yytext));
+				 strcpy(yylval.string,yytext);
+				 cleanString(yylval.string);
 				 return TK_STRING;}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 42 "lex_rules.l"
+#line 43 "lex_rules.l"
 {return TK_SELECT;}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 43 "lex_rules.l"
+#line 44 "lex_rules.l"
 {return TK_INSERT;}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 44 "lex_rules.l"
+#line 45 "lex_rules.l"
 {return TK_UPDATE;}
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 45 "lex_rules.l"
+#line 46 "lex_rules.l"
 {return TK_DELETE;}
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 46 "lex_rules.l"
+#line 47 "lex_rules.l"
 {return TK_FROM;}
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 47 "lex_rules.l"
+#line 48 "lex_rules.l"
 {return TK_WHERE;}
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 48 "lex_rules.l"
+#line 49 "lex_rules.l"
 {return TK_GROUPBY;}
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 49 "lex_rules.l"
+#line 50 "lex_rules.l"
 {return TK_HAVING;}
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 50 "lex_rules.l"
+#line 51 "lex_rules.l"
 {return TK_ORDERBY;}
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 51 "lex_rules.l"
+#line 52 "lex_rules.l"
 {return TK_JOIN;}
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 53 "lex_rules.l"
+#line 54 "lex_rules.l"
 {return TK_IQUALIQUAL;}
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 54 "lex_rules.l"
+#line 55 "lex_rules.l"
 {return TK_GREATERORIQUAL;}
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 55 "lex_rules.l"
+#line 56 "lex_rules.l"
 {return TK_LESSOREQUAL;}
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 56 "lex_rules.l"
+#line 57 "lex_rules.l"
 {return TK_OR;}
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 57 "lex_rules.l"
+#line 58 "lex_rules.l"
 {return TK_AND;}
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 59 "lex_rules.l"
-{var.intNumber = atoi(yytext);
+#line 60 "lex_rules.l"
+{yylval.intNumber = atoi(yytext);
 				 return TK_INTERGER;}
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 62 "lex_rules.l"
-{var.floatNumber =  (float) atof(yytext);
+#line 63 "lex_rules.l"
+{yylval.floatNumber =  (float) atof(yytext);
 								     	  	       return TK_FLOATNUMBER;}
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 65 "lex_rules.l"
-{var.String = (char*) malloc(sizeof(yytext));
-			 	 strcpy(var.String, yytext);
+#line 66 "lex_rules.l"
+{yylval.string = (char*) malloc(sizeof(yytext));
+			 	 strcpy(yylval.string, yytext);
 			 	 return TK_ID;}
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 69 "lex_rules.l"
+#line 70 "lex_rules.l"
 {return yytext;}
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 70 "lex_rules.l"
+#line 71 "lex_rules.l"
 ECHO;
 	YY_BREAK
-#line 1027 "lex.yy.c"
+#line 1028 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 case YY_STATE_EOF(COMMENT):
 case YY_STATE_EOF(STRING):
@@ -2022,7 +2023,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 70 "lex_rules.l"
+#line 71 "lex_rules.l"
 
 
 
@@ -2070,7 +2071,7 @@ void cleanString(char* string)
 	i++;
 	}
 	result[j] = '\0';
-	strcpy(var.String,result);
+	strcpy(yylval.string,result);
 }
 
 yywrap()	{ }

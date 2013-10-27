@@ -10,7 +10,7 @@
 	char* string;
 }
 
-%token  TK_ID TK_PLUSPLUS TK_MINUSMINUS TK_INT TK_CHAR TK_FLOAT TK_VOID TK_IF TK_WHILE TK_DO TK_NEW TK_TRIPOINTS TK_RETURN
+%token  TK_ID TK_GREATERORIQUAL TK_LESSOREQUAL TK_IQUALIQUAL TK_NOTEQUAL TK_OR TK_AND TK_SELECT TK_INSERT TK_UPDATE TK_DELETE TK_FROM TK_WHERE TK_GROUPBY TK_HAVING TK_ORDERBY TK_JOIN
 
 %token<intNumber> TK_INTERGER
 %token<floatNumber> TK_FLOATNUMBER
@@ -18,8 +18,6 @@
 
 %error-verbose
 %right '='
-%left '|'
-%left '&'
 %left '+' '-'
 %left '*' '/' '%'
 %left UMINUS 
@@ -27,91 +25,28 @@
 %left TK_GREATERORIQUAL TK_LESSOREQUAL 
 %left TK_IQUALIQUAL TK_NOTEQUAL
 %left TK_OR TK_AND
-%left TK_PLUSEQUAL TK_LESSEQUAL TK_MULTEQUAL TK_DIVEQUAL
-%nonassoc ELSE
-%nonassoc TK_ELSE
 %start programa
 
 %%
-programa : declaracao 
-	   | /*vazio*/  ;
+programa : 	dml 
+			| teste
+	   		| /*vazio*/  ;
+	
+teste : "teste" ;
 
-declaracao :  declaracao decVariavel 
-		| declaracao decFuncao 
-		| decVariavel
-		| decFuncao;
+dml :  	select
+		| insert
+		| update
+		| delete ;
+		
+select :	TK_SELECT ;
 
-decVariavel : tipo listaNomes ';' ;
+insert : 	TK_INSERT ;
 
-decVariavelRec : decVariavel
-		| decVariavelRec decVariavel ;
+update :	TK_UPDATE ;
 
-listaNomes : TK_ID 
-		| listaNomes ',' TK_ID ;
-
-tipo : tipoBase 
-	| tipo '[' ']' ;
-
-tipoBase : TK_INT 
-		| TK_CHAR 
-		| TK_FLOAT ;
-
-decFuncao : tipo TK_ID '(' parametrosRec ')' bloco 
-		 | TK_VOID TK_ID '(' parametrosRec ')' bloco
-		 | tipo TK_ID '(' ')' bloco 
-		 | TK_VOID TK_ID '(' ')' bloco ;
-
-parametro : tipo TK_ID ;
-
-parametrosRec : parametro 
-		| parametrosRec ',' parametro ;
-
-bloco : '{' decVariavelRec comandoRec '}' 
-	|'{' decVariavelRec '}' 
-	|'{'  comandoRec '}' 
-	|'{' '}' ;
-
-comando : TK_IF '(' exp ')' comando %prec ELSE
-	|TK_IF '(' exp ')' comando TK_ELSE comando
-        | TK_WHILE '(' exp ')' comando
-        | var '=' exp ';'
-        | TK_RETURN exp ';'
-	| TK_RETURN ';'
-        | chamada ';'
-	| bloco ;
-
-comandoRec : comandoRec comando
-		| comando ;
-
-var : TK_ID 
-	| var '[' exp ']' ;
-
-exp : var
-	| '(' exp ')'
-	| chamada
-	| TK_NEW tipo '[' exp ']'
-	| '-' exp %prec UMINUS
-	| exp '+' exp
-	| exp '-' exp
-	| exp '*' exp
-	| exp '/' exp
-	| exp TK_IQUALIQUAL exp
-	| exp TK_LESSOREQUAL exp
-	| exp TK_GREATERORIQUAL exp
-	| exp '<' exp
-	| exp '>' exp
-	| '!' exp %prec UMINUS
-	| exp TK_AND exp
-	| exp TK_OR exp
-	| TK_INTERGER 
-	| TK_FLOATNUMBER 
-	| TK_STRING ;
-
-chamada : TK_ID '(' ')' 
-		| TK_ID '(' listaExpRec ')' ;
-
-listaExpRec : exp 
-		| listaExpRec ',' exp ;
+delete :	TK_DELETE ;
+		
 
 %%
 int yyerror (char const *s)

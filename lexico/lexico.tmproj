@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>Documents/PUC/PF/projetoFinal/lexico/lex.yy.c</string>
+	<string>makeAll.sh</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -13,16 +13,26 @@
 		<dict>
 			<key>filename</key>
 			<string>lex_rules.l</string>
+			<key>lastUsed</key>
+			<date>2013-10-26T23:55:37Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
 			<string>lex_tokens.h</string>
+			<key>lastUsed</key>
+			<date>2013-10-26T23:54:34Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
 			<string>lex.yy.c</string>
 			<key>lastUsed</key>
 			<date>2013-10-16T23:58:02Z</date>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>makeAll.sh</string>
+			<key>lastUsed</key>
+			<date>2013-10-26T23:55:37Z</date>
 			<key>selected</key>
 			<true/>
 		</dict>
@@ -31,14 +41,42 @@
 	<integer>200</integer>
 	<key>metaData</key>
 	<dict>
-		<key>Documents/PUC/PF/projetoFinal/lexico/lex.yy.c</key>
+		<key>lex_rules.l</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>0</integer>
+				<integer>7</integer>
 				<key>line</key>
-				<integer>0</integer>
+				<integer>38</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>13</integer>
+		</dict>
+		<key>lex_tokens.h</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>16</integer>
+				<key>line</key>
+				<integer>24</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>makeAll.sh</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>6</integer>
+				<key>line</key>
+				<integer>1</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -48,7 +86,9 @@
 	</dict>
 	<key>openDocuments</key>
 	<array>
-		<string>Documents/PUC/PF/projetoFinal/lexico/lex.yy.c</string>
+		<string>makeAll.sh</string>
+		<string>lex_rules.l</string>
+		<string>lex_tokens.h</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<true/>

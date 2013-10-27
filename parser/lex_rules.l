@@ -2,8 +2,9 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <math.h>
-#include "lex_tokens.h" 
+#include "yacc.tab.h"
+
+void cleanString(char* string);
 %}
 
 %x COMMENT STRING
@@ -34,9 +35,9 @@ JOIN		ligar|juntar|unir
 "*/"				{BEGIN(INITIAL);}
 }
 
-"\""([^"\""\n\\]|\\[^\n])*"\""	{var.String = (char*) malloc(strlen(yytext));
-				 strcpy(var.String,yytext);
-				 cleanString(var.String);
+"\""([^"\""\n\\]|\\[^\n])*"\""	{yylval.string = (char*) malloc(strlen(yytext));
+				 strcpy(yylval.string,yytext);
+				 cleanString(yylval.string);
 				 return TK_STRING;}
 
 {SELECT}			{return TK_SELECT;}
@@ -56,14 +57,14 @@ JOIN		ligar|juntar|unir
 "||"				{return TK_OR;}
 "&&"				{return TK_AND;}
 
-(""|"-"){DIGITS}+		{var.intNumber = atoi(yytext);
+(""|"-"){DIGITS}+		{yylval.intNumber = atoi(yytext);
 				 return TK_INTERGER;}
 
-("+"{DIGITS}+|""|"-"{DIGITS}+){DIGITS}*(""|"."{DIGITS}*)(""|"e"("+"|"-"|""){DIGITS}+) {var.floatNumber =  (float) atof(yytext);
+("+"{DIGITS}+|""|"-"{DIGITS}+){DIGITS}*(""|"."{DIGITS}*)(""|"e"("+"|"-"|""){DIGITS}+) {yylval.floatNumber =  (float) atof(yytext);
 								     	  	       return TK_FLOATNUMBER;}
 
-{CHAR}+				{var.String = (char*) malloc(sizeof(yytext));
-			 	 strcpy(var.String, yytext);
+{CHAR}+				{yylval.string = (char*) malloc(sizeof(yytext));
+			 	 strcpy(yylval.string, yytext);
 			 	 return TK_ID;}
 
 .				{return yytext;}
@@ -113,7 +114,7 @@ void cleanString(char* string)
 	i++;
 	}
 	result[j] = '\0';
-	strcpy(var.String,result);
+	strcpy(yylval.string,result);
 }
 
 yywrap()	{ }

@@ -36,7 +36,7 @@ JOIN		ligar|juntar|unir
 
 "\""([^"\""\n\\]|\\[^\n])*"\""	{var.String = (char*) malloc(strlen(yytext));
 				 strcpy(var.String,yytext);
-				 cleanString(var.String);
+				 //cleanString(var.String);
 				 return TK_STRING;}
 
 {SELECT}			{return TK_SELECT;}
