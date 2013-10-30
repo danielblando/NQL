@@ -40,50 +40,76 @@
       know about them.  */
    enum yytokentype {
      TK_ID = 258,
-     TK_GREATERORIQUAL = 259,
-     TK_LESSOREQUAL = 260,
-     TK_IQUALIQUAL = 261,
-     TK_NOTEQUAL = 262,
-     TK_OR = 263,
-     TK_AND = 264,
-     TK_SELECT = 265,
-     TK_INSERT = 266,
-     TK_UPDATE = 267,
-     TK_DELETE = 268,
-     TK_FROM = 269,
-     TK_WHERE = 270,
-     TK_GROUPBY = 271,
-     TK_HAVING = 272,
-     TK_ORDERBY = 273,
-     TK_JOIN = 274,
-     TK_INTERGER = 275,
-     TK_FLOATNUMBER = 276,
-     TK_STRING = 277,
-     UMINUS = 278
+     TK_GREATHERTHAN = 259,
+     TK_LESSTHAN = 260,
+     TK_LESSOREQUAL = 261,
+     TK_GREATHEROREQUAL = 262,
+     TK_EQUALEQUAL = 263,
+     TK_NOTEQUAL = 264,
+     TK_IN = 265,
+     TK_OR = 266,
+     TK_AND = 267,
+     TK_SELECT = 268,
+     TK_INSERT = 269,
+     TK_UPDATE = 270,
+     TK_DELETE = 271,
+     TK_FROM = 272,
+     TK_WHERE = 273,
+     TK_GROUPBY = 274,
+     TK_HAVING = 275,
+     TK_ORDERBY = 276,
+     TK_JOIN = 277,
+     TK_COUNT = 278,
+     TK_AVG = 279,
+     TK_MIN = 280,
+     TK_MAX = 281,
+     TK_SUM = 282,
+     TK_FIRST = 283,
+     TK_LAST = 284,
+     TK_LEN = 285,
+     TK_INTERGER = 286,
+     TK_FLOATNUMBER = 287,
+     TK_STRING = 288,
+     UMINUS = 289,
+     TK_GREATERORIQUAL = 290,
+     TK_IQUALIQUAL = 291
    };
 #endif
 /* Tokens.  */
 #define TK_ID 258
-#define TK_GREATERORIQUAL 259
-#define TK_LESSOREQUAL 260
-#define TK_IQUALIQUAL 261
-#define TK_NOTEQUAL 262
-#define TK_OR 263
-#define TK_AND 264
-#define TK_SELECT 265
-#define TK_INSERT 266
-#define TK_UPDATE 267
-#define TK_DELETE 268
-#define TK_FROM 269
-#define TK_WHERE 270
-#define TK_GROUPBY 271
-#define TK_HAVING 272
-#define TK_ORDERBY 273
-#define TK_JOIN 274
-#define TK_INTERGER 275
-#define TK_FLOATNUMBER 276
-#define TK_STRING 277
-#define UMINUS 278
+#define TK_GREATHERTHAN 259
+#define TK_LESSTHAN 260
+#define TK_LESSOREQUAL 261
+#define TK_GREATHEROREQUAL 262
+#define TK_EQUALEQUAL 263
+#define TK_NOTEQUAL 264
+#define TK_IN 265
+#define TK_OR 266
+#define TK_AND 267
+#define TK_SELECT 268
+#define TK_INSERT 269
+#define TK_UPDATE 270
+#define TK_DELETE 271
+#define TK_FROM 272
+#define TK_WHERE 273
+#define TK_GROUPBY 274
+#define TK_HAVING 275
+#define TK_ORDERBY 276
+#define TK_JOIN 277
+#define TK_COUNT 278
+#define TK_AVG 279
+#define TK_MIN 280
+#define TK_MAX 281
+#define TK_SUM 282
+#define TK_FIRST 283
+#define TK_LAST 284
+#define TK_LEN 285
+#define TK_INTERGER 286
+#define TK_FLOATNUMBER 287
+#define TK_STRING 288
+#define UMINUS 289
+#define TK_GREATERORIQUAL 290
+#define TK_IQUALIQUAL 291
 
 
 
@@ -97,7 +123,7 @@ typedef union YYSTYPE
 	char* string;
 }
 /* Line 1529 of yacc.c.  */
-#line 101 "yacc.tab.h"
+#line 127 "yacc.tab.h"
 	YYSTYPE;
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1

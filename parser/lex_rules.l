@@ -10,20 +10,35 @@ void cleanString(char* string);
 %x COMMENT STRING
 
 
-DIGITS		[0-9]
-CHAR		[a-zA-Z_][a-zA-Z0-9_]*
-HEXA		[a-fA-F0-9]
-SELECT      selecionar|escolher
-INSERT		inserir|introduzir|intercalar
-UPDATE		atualizar|modernizar
-DELETE		apagar|anular|cancelar
-FROM		de
-WHERE		onde|aonde|com
-GROUP_BY	agrupar|associar|combinar
-HAVING		ter|haver|possuir
-ORDER_BY	ordenar|dispor|arranjar
-JOIN		ligar|juntar|unir
-
+DIGITS			[0-9]
+CHAR			[a-zA-Z_][a-zA-Z0-9_]*
+HEXA			[a-fA-F0-9]
+SELECT      	selecionar|escolher
+INSERT			inserir|introduzir|intercalar
+UPDATE			atualizar|modernizar
+DELETE			apagar|anular|cancelar
+FROM			de
+WHERE			onde|aonde|com
+GROUP_BY		agrupar|associar|combinar
+HAVING			ter|haver|possuir
+ORDER_BY		ordenar|dispor|arranjar
+JOIN			ligar|juntar|unir
+AND				e|,
+EQUALEQUAL		igual
+LESSTHAN		menor
+GREATHERTHAN	maior
+NOTEQUAL		diferente
+IN				pertence
+LESSOREQUAL		maiorigual
+GREATHEROREQUAL	menorigual
+COUNT			quantidade
+AVG				media
+MIN				minimo
+MAX				maximo
+SUM				soma
+FIRST			primeiro
+LAST			ultimo
+LEN				comprimento
 
 %%
 [ \t\n]+			{ }
@@ -31,7 +46,7 @@ JOIN		ligar|juntar|unir
 "/*"				{BEGIN(COMMENT);}
 <COMMENT>{
 [ \t\n]+			{ }
-.				{ }
+.					{ }
 "*/"				{BEGIN(INITIAL);}
 }
 
@@ -40,31 +55,49 @@ JOIN		ligar|juntar|unir
 				 cleanString(yylval.string);
 				 return TK_STRING;}
 
-{SELECT}			{return TK_SELECT;}
-{INSERT}			{return TK_INSERT;}
-{UPDATE}			{return TK_UPDATE;}
-{DELETE}			{return TK_DELETE;}
-{FROM}              {return TK_FROM;}
-{WHERE}				{return TK_WHERE;}
-{GROUP_BY}			{return TK_GROUPBY;}
-{HAVING}			{return TK_HAVING;}
-{ORDER_BY}			{return TK_ORDERBY;}
-{JOIN}				{return TK_JOIN;}
+{SELECT}			{printf("select \n");return TK_SELECT;}
+{INSERT}			{printf("insert \n");return TK_INSERT;}
+{UPDATE}			{printf("update \n");return TK_UPDATE;}
+{DELETE}			{printf("delete \n");return TK_DELETE;}
+{FROM}              {printf("from \n"); return TK_FROM;}
+{AND}				{printf("and \n");return TK_AND;}
 
-"=="				{return TK_IQUALIQUAL;}
+{WHERE}				{printf("where \n");return TK_WHERE;}
+{GROUP_BY}			{printf("group by \n");return TK_GROUPBY;}
+{HAVING}			{printf("having \n");return TK_HAVING;}
+{ORDER_BY}			{printf("order by \n");return TK_ORDERBY;}
+{JOIN}				{printf("join \n");return TK_JOIN;}
+
+{EQUALEQUAL}		{printf("== \n");return TK_EQUALEQUAL;}
+{LESSTHAN}			{printf("< \n");return TK_LESSTHAN;}
+{GREATHERTHAN}		{printf("> \n");return TK_GREATHERTHAN;}
+{NOTEQUAL}			{printf("!= \n");return TK_NOTEQUAL;}
+{IN}				{printf("in \n");return TK_IN;}
+{LESSOREQUAL}		{printf("<= \n");return TK_LESSOREQUAL;}
+{GREATHEROREQUAL}	{printf(">= \n");return TK_GREATHEROREQUAL;}
+{COUNT}				{printf("count \n");return TK_COUNT;}
+{AVG}				{printf("avg \n");return TK_AVG;}
+{MIN}				{printf("min \n");return TK_MIN;}
+{MAX}				{printf("max \n");return TK_MAX;}
+{SUM}				{printf("sum \n");return TK_SUM;}
+{FIRST}				{printf("first \n");return TK_FIRST;}
+{LAST}				{printf("last \n");return TK_LAST;}
+{LEN}				{printf("len \n");return TK_LEN;}
+
 ">="				{return TK_GREATERORIQUAL;}
 "<="				{return TK_LESSOREQUAL;}
 "||"				{return TK_OR;}
-"&&"				{return TK_AND;}
 
 (""|"-"){DIGITS}+		{yylval.intNumber = atoi(yytext);
-				 return TK_INTERGER;}
+						printf("%d \n", yylval.intNumber);
+				 		return TK_INTERGER;}
 
 ("+"{DIGITS}+|""|"-"{DIGITS}+){DIGITS}*(""|"."{DIGITS}*)(""|"e"("+"|"-"|""){DIGITS}+) {yylval.floatNumber =  (float) atof(yytext);
 								     	  	       return TK_FLOATNUMBER;}
 
 {CHAR}+				{yylval.string = (char*) malloc(sizeof(yytext));
 			 	 strcpy(yylval.string, yytext);
+				 printf("%s \n", yylval.string);
 			 	 return TK_ID;}
 
 .				{return yytext;}
