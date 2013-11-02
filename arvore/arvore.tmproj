@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>documents</key>
+	<array>
+		<dict>
+			<key>filename</key>
+			<string>lex_rules.l</string>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>lex.yy.c</string>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>makeAll.sh</string>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>tree_old.c</string>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>tree_old.h</string>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>yacc_main.c</string>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>yacc_old.y</string>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>yacc.tab.c</string>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>yacc.tab.h</string>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>yacc.y</string>
+		</dict>
+	</array>
+	<key>fileHierarchyDrawerWidth</key>
+	<integer>200</integer>
+	<key>metaData</key>
+	<dict/>
+	<key>showFileHierarchyDrawer</key>
+	<true/>
+	<key>windowFrame</key>
+	<string>{{210, 78}, {1070, 700}}</string>
+</dict>
+</plist>
