@@ -5,9 +5,9 @@ _tabversion = '3.2'
 
 _lr_method = 'LALR'
 
-_lr_signature = '\xe9\xf0g\xc2\x1a~7\xdfU\x99G\xac\xe3\x9eS\x94'
+_lr_signature = '\xcbA\x82)r\x88\xe9N\x13v%\x90\xf1\x87\xf4\xcf'
     
-_lr_action_items = {'RPAREN':([1,2,4,8,11,12,13,14,15,],[-3,-7,-6,13,-5,-4,-8,-1,-2,]),'DIVIDE':([1,2,4,11,12,13,14,15,],[6,-7,-6,-5,-4,-8,6,6,]),'NUMBER':([0,3,6,7,9,10,],[2,2,2,2,2,2,]),'TIMES':([1,2,4,11,12,13,14,15,],[7,-7,-6,-5,-4,-8,7,7,]),'PLUS':([1,2,4,5,8,11,12,13,14,15,],[-3,-7,-6,9,9,-5,-4,-8,-1,-2,]),'LPAREN':([0,3,6,7,9,10,],[3,3,3,3,3,3,]),'MINUS':([1,2,4,5,8,11,12,13,14,15,],[-3,-7,-6,10,10,-5,-4,-8,-1,-2,]),'$end':([1,2,4,5,11,12,13,14,15,],[-3,-7,-6,0,-5,-4,-8,-1,-2,]),}
+_lr_action_items = {'TK_LESSOREQUAL':([41,42,43,45,],[-39,-37,53,-38,]),'TK_GREATHEROREQUAL':([41,42,43,45,],[-39,-37,54,-38,]),'TK_ORDERBY':([21,22,23,26,27,28,29,30,32,34,37,39,40,41,42,44,45,46,47,48,49,50,59,60,],[-27,-29,-30,-28,36,-14,-16,-18,-15,-17,-12,36,-25,-39,-37,-21,-38,-19,-23,-22,-20,-13,-24,-26,]),'TK_AVG':([8,24,38,],[12,12,12,]),'TK_LAST':([8,24,38,],[14,14,14,]),'TK_MAX':([8,24,38,],[15,15,15,]),'TK_MIN':([8,24,38,],[17,17,17,]),'TK_JOIN':([21,22,23,26,27,28,29,30,32,34,37,39,40,41,42,44,45,46,47,48,49,50,59,60,],[-27,-29,-30,-28,35,-14,-16,-18,-15,-17,-12,35,-25,-39,-37,-21,-38,-19,-23,-22,-20,-13,-24,-26,]),'TK_FIRST':([8,24,38,],[19,19,19,]),'TK_GREATHERTHAN':([41,42,43,45,],[-39,-37,56,-38,]),'TK_ID':([8,11,12,13,14,15,16,17,19,20,24,25,31,33,35,36,38,51,52,53,54,55,56,57,58,],[22,23,-41,-47,-46,-43,-40,-42,-45,-44,22,27,42,42,47,42,22,-34,-32,-35,-36,-31,-33,42,42,]),'TK_SELECT':([0,],[8,]),'$end':([0,1,2,3,4,5,6,7,9,10,21,22,23,26,27,28,29,30,32,34,37,39,40,41,42,44,45,46,47,48,49,50,59,60,],[-2,-4,-9,-11,-1,-5,0,-10,-3,-6,-27,-29,-30,-28,-8,-14,-16,-18,-15,-17,-12,-7,-25,-39,-37,-21,-38,-19,-23,-22,-20,-13,-24,-26,]),'TK_NOTEQUAL':([41,42,43,45,],[-39,-37,51,-38,]),'TK_LEN':([8,24,38,],[13,13,13,]),'TK_DELETE':([0,],[3,]),'TK_AND':([18,21,22,23,26,40,41,42,44,45,46,48,49,59,60,],[24,-27,-29,-30,-28,-25,-39,-37,58,-38,58,58,24,-24,-26,]),'TK_WHERE':([21,22,23,26,27,28,29,30,32,34,37,39,40,41,42,44,45,46,47,48,49,50,59,60,],[-27,-29,-30,-28,33,-14,-16,-18,-15,-17,-12,33,-25,-39,-37,-21,-38,-19,-23,-22,-20,-13,-24,-26,]),'TK_UPDATE':([0,],[7,]),'TK_FROM':([18,21,22,23,26,],[25,-27,-29,-30,-28,]),'TK_LESSTHAN':([41,42,43,45,],[-39,-37,52,-38,]),'TK_COUNT':([8,24,38,],[16,16,16,]),'TK_HAVING':([21,22,23,26,27,28,29,30,32,34,37,39,40,41,42,44,45,46,47,48,49,50,59,60,],[-27,-29,-30,-28,31,-14,-16,-18,-15,-17,-12,31,-25,-39,-37,-21,-38,-19,-23,-22,-20,-13,-24,-26,]),'TK_INSERT':([0,],[2,]),'TK_SUM':([8,24,38,],[20,20,20,]),'TK_EQUALEQUAL':([41,42,43,45,],[-39,-37,55,-38,]),'TK_FLOATNUMBER':([31,33,36,51,52,53,54,55,56,57,58,],[41,41,41,-34,-32,-35,-36,-31,-33,41,41,]),'TK_GROUPBY':([21,22,23,26,27,28,29,30,32,34,37,39,40,41,42,44,45,46,47,48,49,50,59,60,],[-27,-29,-30,-28,38,-14,-16,-18,-15,-17,-12,38,-25,-39,-37,-21,-38,-19,-23,-22,-20,-13,-24,-26,]),'TK_INTERGER':([31,33,36,51,52,53,54,55,56,57,58,],[45,45,45,-34,-32,-35,-36,-31,-33,45,45,]),}
 
 _lr_action = { }
 for _k, _v in _lr_action_items.items():
@@ -16,7 +16,7 @@ for _k, _v in _lr_action_items.items():
       _lr_action[_x][_k] = _y
 del _lr_action_items
 
-_lr_goto_items = {'term':([0,3,9,10,],[1,1,14,15,]),'expression':([0,3,],[5,8,]),'factor':([0,3,6,7,9,10,],[4,4,11,12,4,4,]),}
+_lr_goto_items = {'function':([8,24,38,],[11,11,11,]),'insert':([0,],[1,]),'exp':([31,33,36,57,58,],[43,43,43,59,43,]),'claOrderby':([27,39,],[34,34,]),'claHaving':([27,39,],[29,29,]),'claJoin':([27,39,],[30,30,]),'clausesRec':([27,],[39,]),'columnsFuncListRec':([8,38,],[18,49,]),'dml':([0,],[4,]),'update':([0,],[5,]),'claGroupby':([27,39,],[32,32,]),'columnsFuncList':([8,24,38,],[21,26,21,]),'claWhere':([27,39,],[28,28,]),'condition':([43,],[57,]),'programa':([0,],[6,]),'conditionList':([31,33,36,58,],[40,40,40,60,]),'conditionListRec':([31,33,36,],[44,46,48,]),'clauses':([27,39,],[37,50,]),'select':([0,],[9,]),'delete':([0,],[10,]),}
 
 _lr_goto = { }
 for _k, _v in _lr_goto_items.items():
@@ -25,13 +25,52 @@ for _k, _v in _lr_goto_items.items():
        _lr_goto[_x][_k] = _y
 del _lr_goto_items
 _lr_productions = [
-  ("S' -> expression","S'",1,None,None,None),
-  ('expression -> expression PLUS term','expression',3,'p_expression_plus','nql_parser.py',9),
-  ('expression -> expression MINUS term','expression',3,'p_expression_minus','nql_parser.py',13),
-  ('expression -> term','expression',1,'p_expression_term','nql_parser.py',17),
-  ('term -> term TIMES factor','term',3,'p_term_times','nql_parser.py',21),
-  ('term -> term DIVIDE factor','term',3,'p_term_div','nql_parser.py',25),
-  ('term -> factor','term',1,'p_term_factor','nql_parser.py',29),
-  ('factor -> NUMBER','factor',1,'p_factor_num','nql_parser.py',33),
-  ('factor -> LPAREN expression RPAREN','factor',3,'p_factor_expr','nql_parser.py',37),
+  ("S' -> programa","S'",1,None,None,None),
+  ('programa -> dml','programa',1,'p_programa','/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser.py',11),
+  ('programa -> <empty>','programa',0,'p_programa','/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser.py',12),
+  ('dml -> select','dml',1,'p_dml','/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser.py',16),
+  ('dml -> insert','dml',1,'p_dml','/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser.py',17),
+  ('dml -> update','dml',1,'p_dml','/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser.py',18),
+  ('dml -> delete','dml',1,'p_dml','/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser.py',19),
+  ('select -> TK_SELECT columnsFuncListRec TK_FROM TK_ID clausesRec','select',5,'p_select','/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser.py',23),
+  ('select -> TK_SELECT columnsFuncListRec TK_FROM TK_ID','select',4,'p_select','/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser.py',24),
+  ('insert -> TK_INSERT','insert',1,'p_insert','/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser.py',29),
+  ('update -> TK_UPDATE','update',1,'p_update','/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser.py',33),
+  ('delete -> TK_DELETE','delete',1,'p_delete','/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser.py',37),
+  ('clausesRec -> clauses','clausesRec',1,'p_clauses_rec','/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser.py',41),
+  ('clausesRec -> clausesRec clauses','clausesRec',2,'p_clauses_rec','/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser.py',42),
+  ('clauses -> claWhere','clauses',1,'p_clauses','/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser.py',46),
+  ('clauses -> claGroupby','clauses',1,'p_clauses','/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser.py',47),
+  ('clauses -> claHaving','clauses',1,'p_clauses','/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser.py',48),
+  ('clauses -> claOrderby','clauses',1,'p_clauses','/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser.py',49),
+  ('clauses -> claJoin','clauses',1,'p_clauses','/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser.py',50),
+  ('claWhere -> TK_WHERE conditionListRec','claWhere',2,'p_clause_where','/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser.py',54),
+  ('claGroupby -> TK_GROUPBY columnsFuncListRec','claGroupby',2,'p_clause_groupby','/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser.py',59),
+  ('claHaving -> TK_HAVING conditionListRec','claHaving',2,'p_clause_having','/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser.py',64),
+  ('claOrderby -> TK_ORDERBY conditionListRec','claOrderby',2,'p_clause_orderby','/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser.py',68),
+  ('claJoin -> TK_JOIN TK_ID','claJoin',2,'p_cla_join','/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser.py',72),
+  ('conditionList -> exp condition exp','conditionList',3,'p_condition_list','/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser.py',76),
+  ('conditionListRec -> conditionList','conditionListRec',1,'p_condition_list_rec','/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser.py',80),
+  ('conditionListRec -> conditionListRec TK_AND conditionList','conditionListRec',3,'p_condition_list_rec','/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser.py',81),
+  ('columnsFuncListRec -> columnsFuncList','columnsFuncListRec',1,'p_columns_func_list_rec','/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser.py',85),
+  ('columnsFuncListRec -> columnsFuncListRec TK_AND columnsFuncList','columnsFuncListRec',3,'p_columns_func_list_rec','/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser.py',86),
+  ('columnsFuncList -> TK_ID','columnsFuncList',1,'p_columns_func_list','/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser.py',90),
+  ('columnsFuncList -> function TK_ID','columnsFuncList',2,'p_columns_func_list','/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser.py',91),
+  ('condition -> TK_EQUALEQUAL','condition',1,'p_condition','/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser.py',95),
+  ('condition -> TK_LESSTHAN','condition',1,'p_condition','/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser.py',96),
+  ('condition -> TK_GREATHERTHAN','condition',1,'p_condition','/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser.py',97),
+  ('condition -> TK_NOTEQUAL','condition',1,'p_condition','/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser.py',98),
+  ('condition -> TK_LESSOREQUAL','condition',1,'p_condition','/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser.py',99),
+  ('condition -> TK_GREATHEROREQUAL','condition',1,'p_condition','/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser.py',100),
+  ('exp -> TK_ID','exp',1,'p_exp','/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser.py',104),
+  ('exp -> TK_INTERGER','exp',1,'p_exp','/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser.py',105),
+  ('exp -> TK_FLOATNUMBER','exp',1,'p_exp','/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser.py',106),
+  ('function -> TK_COUNT','function',1,'p_function','/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser.py',110),
+  ('function -> TK_AVG','function',1,'p_function','/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser.py',111),
+  ('function -> TK_MIN','function',1,'p_function','/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser.py',112),
+  ('function -> TK_MAX','function',1,'p_function','/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser.py',113),
+  ('function -> TK_SUM','function',1,'p_function','/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser.py',114),
+  ('function -> TK_FIRST','function',1,'p_function','/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser.py',115),
+  ('function -> TK_LAST','function',1,'p_function','/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser.py',116),
+  ('function -> TK_LEN','function',1,'p_function','/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser.py',117),
 ]
