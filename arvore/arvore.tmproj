@@ -3,38 +3,72 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>yacc.y</string>
+	<string>lex_rules.l</string>
 	<key>documents</key>
 	<array>
 		<dict>
 			<key>filename</key>
 			<string>lex_rules.l</string>
 			<key>lastUsed</key>
-			<date>2013-10-30T22:42:54Z</date>
+			<date>2013-11-02T12:30:40Z</date>
+			<key>selected</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>lex.yy.c</string>
+			<key>lastUsed</key>
+			<date>2013-11-02T04:09:37Z</date>
+			<key>selected</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>makeAll.sh</string>
+			<key>selected</key>
+			<true/>
 		</dict>
 		<dict>
 			<key>filename</key>
 			<string>yacc_main.c</string>
 			<key>lastUsed</key>
-			<date>2013-10-30T22:41:23Z</date>
+			<date>2013-10-31T00:00:14Z</date>
+			<key>selected</key>
+			<true/>
 		</dict>
 		<dict>
 			<key>filename</key>
 			<string>yacc.tab.c</string>
-			<key>lastUsed</key>
-			<date>2013-10-29T20:03:13Z</date>
+			<key>selected</key>
+			<true/>
 		</dict>
 		<dict>
 			<key>filename</key>
 			<string>yacc.tab.h</string>
-			<key>lastUsed</key>
-			<date>2013-10-30T21:04:40Z</date>
+			<key>selected</key>
+			<true/>
 		</dict>
 		<dict>
 			<key>filename</key>
 			<string>yacc.y</string>
 			<key>lastUsed</key>
-			<date>2013-10-30T22:42:54Z</date>
+			<date>2013-11-02T12:17:17Z</date>
+			<key>selected</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>tree.c</string>
+			<key>lastUsed</key>
+			<date>2013-11-02T12:30:40Z</date>
+			<key>selected</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>tree.h</string>
+			<key>lastUsed</key>
+			<date>2013-11-02T12:17:38Z</date>
 			<key>selected</key>
 			<true/>
 		</dict>
@@ -48,99 +82,84 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>23</integer>
-				<key>line</key>
 				<integer>31</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>40</integer>
-		</dict>
-		<key>yacc.tab.c</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
 				<key>line</key>
-				<integer>0</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>1074</integer>
-		</dict>
-		<key>yacc.tab.h</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>0</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>57</integer>
-		</dict>
-		<key>yacc.y</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>13</integer>
-				<key>line</key>
-				<integer>96</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>69</integer>
-		</dict>
-		<key>yacc_main.c</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>11</integer>
-				<key>line</key>
-				<integer>5</integer>
+				<integer>69</integer>
 			</dict>
 			<key>columnSelection</key>
 			<false/>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>0</integer>
+			<integer>54</integer>
 			<key>selectFrom</key>
 			<dict>
 				<key>column</key>
-				<integer>9</integer>
+				<integer>15</integer>
 				<key>line</key>
-				<integer>5</integer>
+				<integer>69</integer>
 			</dict>
 			<key>selectTo</key>
 			<dict>
 				<key>column</key>
-				<integer>16</integer>
+				<integer>31</integer>
 				<key>line</key>
-				<integer>5</integer>
+				<integer>69</integer>
 			</dict>
+		</dict>
+		<key>tree.c</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>4</integer>
+				<key>line</key>
+				<integer>122</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>95</integer>
+		</dict>
+		<key>tree.h</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>66</integer>
+				<key>line</key>
+				<integer>10</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>yacc.y</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>64</integer>
+				<key>line</key>
+				<integer>116</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>62</integer>
 		</dict>
 	</dict>
 	<key>openDocuments</key>
 	<array>
 		<string>yacc.y</string>
+		<string>tree.h</string>
+		<string>tree.c</string>
 		<string>lex_rules.l</string>
-		<string>yacc.tab.c</string>
-		<string>yacc.tab.h</string>
-		<string>yacc_main.c</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
-	<string>{{210, 78}, {1070, 700}}</string>
+	<string>{{210, 65}, {1070, 713}}</string>
 </dict>
 </plist>
