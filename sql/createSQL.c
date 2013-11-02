@@ -50,12 +50,12 @@ void SqlSelect(SelectNo* a1)
 void SqlColumnFuncListRec(ColumnFuncListRecNo* a1)
 {
 	AsmPrintf("Funcao SqlColumnFuncListRec Inicio\n");
-	SqlColumnFuncList(a1->columnFuncList);
 	if(a1->columnFuncListRec != NULL)
 	{
-		AddTextToResult(",");
 		SqlColumnFuncListRec(a1->columnFuncListRec);
+		AddTextToResult(",");
 	}
+	SqlColumnFuncList(a1->columnFuncList);
 
 	AsmPrintf("Funcao SqlColumnFuncListRec Fim\n");
 }
@@ -97,6 +97,29 @@ void AddTextOfFunc(FuncTOKEN token)
 {
 	switch(token)
 	{
-		//TODO: codigo para todas as funcoes
+		case COUNT:
+			AddTextToResult("COUNT");
+			break;
+		case AVG:
+			AddTextToResult("AVG");
+			break;
+		case MIN:
+			AddTextToResult("MIN");
+			break;
+		case MAX:
+			AddTextToResult("MAX");
+			break;
+		case SUM:
+			AddTextToResult("SUM");
+			break;
+		case FIRST:
+			AddTextToResult("FIRST");
+			break;
+		case LAST:
+			AddTextToResult("LAST");
+			break;
+		case LEN:
+			AddTextToResult("LEN");
+			break;
 	}
 }
