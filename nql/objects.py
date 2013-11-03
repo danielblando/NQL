@@ -58,9 +58,9 @@ class ClausesRecNo:
 			self.clausesRec = clausesRec
 
 class ClausesNo:
-	def __init__(self, claToken, query):
+	def __init__(self, claToken, obj):
 			self.claToken = claToken
-			self.query = query
+			self.obj = obj
 
 class WhereNo:
 	def __init__(self, condListRec):

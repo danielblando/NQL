@@ -67,6 +67,18 @@ def p_clauses(p):
     if isInstanceEqualClass(p[1],WhereNo):
         p[0] = ClausesNo(ClaToken.WHERE, p[1])
 
+    elif isInstanceEqualClass(p[1],GroupbyNo):
+        p[0] = ClausesNo(ClaToken.GROUPBY, p[1])
+
+    elif isInstanceEqualClass(p[1],HavingNo):
+        p[0] = ClausesNo(ClaToken.HAVING, p[1])
+
+    elif isInstanceEqualClass(p[1],OrderbyNo):
+        p[0] = ClausesNo(ClaToken.ORDERBY, p[1])
+        
+    elif isInstanceEqualClass(p[1],JoinNo):
+        p[0] = ClausesNo(ClaToken.JOIN, p[1])
+
 def p_clause_where(p):
     """claWhere : TK_WHERE conditionListRec
     """
@@ -83,7 +95,7 @@ def p_clause_having(p):
     p[0] = HavingNo(p[2])
 
 def p_clause_orderby(p):
-    """claOrderby : TK_ORDERBY conditionListRec
+    """claOrderby : TK_ORDERBY columnsFuncListRec
     """
     p[0] = OrderbyNo(p[2])
 
@@ -221,7 +233,7 @@ def p_error(p):
     raise Exception("Syntax error in input!")
 
 # Build the parser
-parser = yacc.yacc()
+parser = yacc.yacc(debug=True)
 
 
 if __name__ == '__main__':

@@ -1,8 +1,7 @@
 from nql_lexer import lexer
 
 # Test it out
-data = ''' selecionar idade de pessoas '''
-data2 = ''' selecionar ab de ab '''
+data = ''' selecionar idade de alunos ordernar nome '''
 
 # Give the lexer some input
 lexer.input(data)

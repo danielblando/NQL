@@ -17,6 +17,20 @@ result = Result("")
 
 def AddTextToResult(s):
 	result.query = result.query + s + ' '
+
+def AddTextOfFunc(condToken):
+	if condToken is CondToken.EQUALEQUAL:
+		AddTextToResult("==")
+	elif condToken is CondToken.LESSTHAN:
+		AddTextToResult("<")
+	elif condToken is CondToken.GREATHERTHAN:
+		AddTextToResult(">")
+	elif condToken is CondToken.NOTEQUAL:
+		AddTextToResult("!=")
+	elif condToken is CondToken.LESSOREQUAL:
+		AddTextToResult("<=")
+	elif condToken is CondToken.GREATHEROREQUAL:
+		AddTextToResult(">=")
 	
 
 ######################################################################
@@ -71,10 +85,79 @@ def SqlColumnFuncList(columnFuncListNo):
 	SqlPrint("Funcao SqlColumnFuncList fim")
 
 ########################Clauses##################
-def SqlClausesRec(clausesRec):
+def SqlClausesRec(clausesRecNo):
 	SqlPrint("Funcao SqlClausesRec inicio")
+	if clausesRecNo.clausesRec is not None:
+		SqlClausesRec(clausesRecNo.clausesRec)
+	SqlClauses(clausesRecNo.clauses)
 	SqlPrint("Funcao SqlClausesRec fim")
 
+def SqlClauses(clausesNo):
+	SqlPrint("Funcao SqlClauses inicio")
+	if clausesNo.claToken is ClaToken.WHERE:
+		SqlWhere(clausesNo.obj)
+	elif clausesNo.claToken is ClaToken.ORDERBY:
+		SqlOrderby(clausesNo.obj)
+	elif clausesNo.claToken is ClaToken.HAVING:
+		SqlHaving(clausesNo.obj)
+	elif clausesNo.claToken is ClaToken.GROUPBY:
+		SqlGroupby(clausesNo.obj)
+	elif clausesNo.claToken is ClaToken.JOIN:
+		SqlJoin(clausesNo.obj)
+	SqlPrint("Funcao SqlClauses fim")
+
+def SqlWhere(whereNo):
+	SqlPrint("Funcao SqlWhere inicio")
+	AddTextToResult("WHERE")
+	SqlCondListRec(whereNo.condListRec)
+	SqlPrint("Funcao SqlWhere fim")
+
+def SqlOrderby(orderbyNo):
+	SqlPrint("Funcao SqlOrderby inicio")
+	AddTextToResult("ORDER BY")
+	AddTextToResult("(")
+	SqlColumnFuncListRec(orderbyNo.columnFuncListRec)
+	AddTextToResult(")")
+	SqlPrint("Funcao SqlOrderby fim")
+
+def SqlHaving(havingNo):
+	SqlPrint("Funcao SqlHaving inicio")
+	AddTextToResult("HAVING")
+	SqlCondListRec(havingNo.condListRec)
+	SqlPrint("Funcao SqlHaving fim")
+
+def SqlGroupby(groupbyNo):
+	SqlPrint("Funcao SqlGroupby inicio")
+	AddTextToResult("GROUP BY")
+	AddTextToResult("(")
+	SqlColumnFuncListRec(groupbyNo.columnFuncListRec)
+	AddTextToResult(")")
+	SqlPrint("Funcao SqlGroupby fim")
+
+def SqlJoin(joinNo):
+	SqlPrint("Funcao SqlJoin inicio")
+	AddTextToResult("JOIN")
+	AddTextToResult(joinNo.table)
+	SqlPrint("Funcao SqlJoin fim")
+
+########################Condition########################
+def SqlCondListRec(condListRecNo):
+	SqlPrint("Funcao SqlCondListRec inicio")
+	if condListRecNo.condListRec is not None:
+		SqlCondListRec(condListRecNo.condListRec)
+	SqlCondList(condListRecNo.condList)
+	SqlPrint("Funcao SqlCondListRec fim")
+
+def SqlCondList(condListNo):
+	SqlPrint("Funcao SqlCondList inicio")
+	SqlExp(condListNo.firstExp)
+	AddTextOfFunc(condListNo.condToken)
+	SqlExp(condListNo.secondExp)
+	SqlPrint("Funcao SqlCondList fim")
+
+########################Expression########################
+def SqlExp(expNo):
+	AddTextToResult(expNo.value)
 
 
 
