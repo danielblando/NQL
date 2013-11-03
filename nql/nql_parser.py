@@ -7,6 +7,7 @@ import ply.yacc as yacc
 # Get the token map from the lexer.  This is required.
 from nql_lexer import tokens
 from objects import *
+from createSql import SqlProg
 
 
 ###########################################################################################
@@ -14,9 +15,8 @@ def p_programa(p):
     """programa : dml
                 | 
     """
-    tree = ProgNo(p[1])
-    print tree.dml.dmlToken
-    p[0] = tree
+    p[0] = ProgNo(p[1])
+    p[0] = SqlProg(p[0])
 
 def p_dml(p):
     """dml : select
@@ -222,6 +222,7 @@ def p_error(p):
 
 # Build the parser
 parser = yacc.yacc()
+
 
 if __name__ == '__main__':
   while True:

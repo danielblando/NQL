@@ -17,15 +17,23 @@ output.getSession().setUseSoftTabs(false);
 
 $(function() {
 var submit_form = function(e) {
-  $.getJSON($SCRIPT_ROOT + '/_add_numbers', {
-    query: input.session.getValue()
-    //b: $('input[name="b"]').val(),
-  }, function(data) {
-    console.log(data.result);
-    output.session.setValue(String(data.result));
-    //$('#result').text(data.result);
-    //$('input[name=a]').focus().select();
-  });
+  var vInput = input.session.getValue();
+  if(vInput != '')
+  {
+    $.getJSON($SCRIPT_ROOT + '/_add_numbers', {
+      query: input.session.getValue()
+      //b: $('input[name="b"]').val(),
+    }, function(data) {
+      console.log(data.result);
+      output.session.setValue(String(data.result));
+      //$('#result').text(data.result);
+      //$('input[name=a]').focus().select();
+    });
+  }
+  else
+  {
+    output.session.setValue('');
+  }
   return false;
 };
 

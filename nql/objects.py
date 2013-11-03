@@ -96,7 +96,7 @@ class CondListNo:
 class ColumnFuncListRecNo:
 	def __init__(self, columnFuncList, columnFuncListRec = None):
 			self.columnFuncList = columnFuncList
-			self.columnFuncListRec = columnFuncList
+			self.columnFuncListRec = columnFuncListRec
 
 class ColumnFuncListNo:
 	def __init__(self, value, funcToken = None):
