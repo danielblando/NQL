@@ -157,7 +157,10 @@ def SqlCondList(condListNo):
 
 ########################Expression########################
 def SqlExp(expNo):
-	AddTextToResult(expNo.value)
+	if expNo.expToken is ExpToken.CHAR:
+		AddTextToResult(expNo.value)
+	elif expNo.expToken is ExpToken.INT:
+		AddTextToResult(str(expNo.value))
 
 
 
