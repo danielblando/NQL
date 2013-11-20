@@ -1,0 +1,22 @@
+[
+	{
+		"title": "Select",
+		"text": "selecionar"
+	},
+	{
+		"title": "From",
+		"text": "de"
+	},
+	{
+		"title": "Where",
+		"text": "com"
+	},
+	{
+		"title": "Order by",
+		"text": "ordernar"
+	},
+	{
+		"title": "Group by",
+		"text": "agrupar"
+	}
+]

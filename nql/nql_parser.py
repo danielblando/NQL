@@ -8,6 +8,7 @@ import ply.yacc as yacc
 from nql_lexer import tokens
 from objects import *
 from createSql import SqlProg
+from errorHandling import parse_error
 
 
 ###########################################################################################
@@ -229,8 +230,8 @@ def isInstanceEqualClass(a,b):
         return 0
 
 # Error rule for syntax errors
-def p_error(p):
-    raise Exception("Syntax error in input!")
+def p_error(p, stack):
+    parse_error(p, stack)
 
 # Build the parser
 parser = yacc.yacc(debug=True)

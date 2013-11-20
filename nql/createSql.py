@@ -89,6 +89,7 @@ def SqlClausesRec(clausesRecNo):
 	SqlPrint("Funcao SqlClausesRec inicio")
 	if clausesRecNo.clausesRec is not None:
 		SqlClausesRec(clausesRecNo.clausesRec)
+
 	SqlClauses(clausesRecNo.clauses)
 	SqlPrint("Funcao SqlClausesRec fim")
 
@@ -145,6 +146,8 @@ def SqlCondListRec(condListRecNo):
 	SqlPrint("Funcao SqlCondListRec inicio")
 	if condListRecNo.condListRec is not None:
 		SqlCondListRec(condListRecNo.condListRec)
+		AddTextToResult("AND")
+
 	SqlCondList(condListRecNo.condList)
 	SqlPrint("Funcao SqlCondListRec fim")
 

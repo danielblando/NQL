@@ -3,10 +3,114 @@
 	{
 		"selected_items":
 		[
+			[
+				"Add",
+				"AddTextToResult"
+			],
+			[
+				"cond",
+				"condListNo"
+			],
+			[
+				"con",
+				"condListNo"
+			],
+			[
+				"Con",
+				"condToken"
+			],
+			[
+				"co",
+				"condToken"
+			],
+			[
+				"Sql",
+				"SqlCondListRec"
+			],
+			[
+				"SqlCo",
+				"SqlColumnFuncListRec"
+			],
+			[
+				"cla",
+				"clausesNo"
+			],
+			[
+				"SqC",
+				"SqlClausesRec"
+			],
+			[
+				"col",
+				"columnFuncListNo"
+			],
+			[
+				"TK_LESS",
+				"TK_LESSTHAN"
+			],
+			[
+				"class",
+				"__class__"
+			],
+			[
+				"se",
+				"secondExp"
+			],
+			[
+				"f",
+				"firstExp"
+			],
+			[
+				"c",
+				"clausesRec"
+			],
+			[
+				"TK_LE",
+				"TK_LEN"
+			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"file": "/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser.py",
+			"settings":
+			{
+				"buffer_size": 5613,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser_example.py",
+			"settings":
+			{
+				"buffer_size": 136,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_lexer.py",
+			"settings":
+			{
+				"buffer_size": 2649,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/createSql.py",
+			"settings":
+			{
+				"buffer_size": 4752,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/objects.py",
+			"settings":
+			{
+				"buffer_size": 2077,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -32,6 +136,33 @@
 	},
 	"file_history":
 	[
+		"/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_lexer.py",
+		"/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/createSql.py",
+		"/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/templates/index.html",
+		"/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/static/css/nql.css",
+		"/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/templates/layout.html",
+		"/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/feeds.json",
+		"/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/server.py",
+		"/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/static/js/nql.js",
+		"/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser_example.py",
+		"/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/parsetab.py",
+		"/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/parser.out",
+		"/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/objects.py",
+		"/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_lexer_example.py",
+		"/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/Procfile",
+		"/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/requirements.txt",
+		"/Users/Daniel/Documents/PUC/PF/projetoFinal/nql_backup/server.py",
+		"/Users/Daniel/Documents/PUC/PF/projetoFinal/nql_backup/nql_lexer_example.py",
+		"/Users/Daniel/Documents/PUC/PF/projetoFinal/nql_backup/nql_parser.py",
+		"/Users/Daniel/Documents/PUC/PF/projetoFinal/nql_backup/nql_parser_example.py",
+		"/Users/Daniel/Documents/PUC/PF/projetoFinal/nql_backup/calc.py",
+		"/Users/Daniel/Documents/PUC/PF/projetoFinal/sql/tree.h",
+		"/Users/Daniel/Documents/PUC/PF/projetoFinal/sql/yacc.tab.h",
+		"/Users/Daniel/Documents/PUC/PF/projetoFinal/sql/yacc.tab.c",
+		"/Users/Daniel/Documents/PUC/PF/projetoFinal/sql/yacc.y",
+		"/Users/Daniel/Documents/PUC/PF/projetoFinal/sql/yacc_main.c",
+		"/Users/Daniel/Documents/PUC/PF/projetoFinal/lexico/lex_rules.l",
+		"/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql.py"
 	],
 	"find":
 	{
@@ -49,10 +180,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"AddTextOf",
+			"typ",
 			"\n"
 		],
 		"highlight": true,
-		"in_selection": true,
+		"in_selection": false,
 		"preserve_case": false,
 		"regex": false,
 		"replace_history":
@@ -67,8 +200,145 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser.py",
+					"settings":
+					{
+						"buffer_size": 5613,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5358,
+								5358
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3086.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_parser_example.py",
+					"settings":
+					{
+						"buffer_size": 136,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								66,
+								66
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/nql_lexer.py",
+					"settings":
+					{
+						"buffer_size": 2649,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								409,
+								417
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/createSql.py",
+					"settings":
+					{
+						"buffer_size": 4752,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2557,
+								2557
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1078.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/Users/Daniel/Documents/PUC/PF/projetoFinal/nql/objects.py",
+					"settings":
+					{
+						"buffer_size": 2077,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								978,
+								978
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 707.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -78,7 +348,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 31.0
 	},
 	"layout":
 	{
@@ -128,6 +398,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_width": 245.0,
 	"status_bar_visible": true
 }

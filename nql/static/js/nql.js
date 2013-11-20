@@ -5,6 +5,7 @@ input.setFontSize(16);
 input.setHighlightActiveLine(false);
 input.getSession().setTabSize(4);
 input.getSession().setUseSoftTabs(false);
+input.getSession().setUseWrapMode(true);
 
 var output = ace.edit("output");
 output.setTheme("ace/theme/tomorrow");
@@ -14,6 +15,7 @@ output.setReadOnly(true);
 output.setHighlightActiveLine(false);
 output.getSession().setTabSize(4);
 output.getSession().setUseSoftTabs(false);
+output.getSession().setUseWrapMode(true);
 
 $(function() {
 var submit_form = function(e) {

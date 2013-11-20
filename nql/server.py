@@ -5,9 +5,12 @@
 
     Um servidor simples para facilitar a demonstracao do projeto.
 """
+import json
 from nql_parser import parser
 from flask import Flask, jsonify, render_template, request
 app = Flask(__name__)
+
+feeds = json.load(open("feeds.json"))
 
 @app.route('/_add_numbers')
 def add_numbers():
@@ -25,7 +28,7 @@ def add_numbers():
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', feeds=feeds)
 
 if __name__ == '__main__':
     app.run()

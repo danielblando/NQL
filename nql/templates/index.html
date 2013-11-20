@@ -1,18 +1,43 @@
 {% extends "layout.html" %}
 {% block body %}
-<div class="container">
-  <h1>NQL Demo</h1>
-  <p>Digite sua query em NQL e veja o resultado em SQL.</p>
-  <hr>
-  <div class="row">
-    <div class="col-lg-6">
-      <pre id="input"></pre>
+<div id="wrap"> 
+  <div id="push" class="container">
+    <h1>NQL - Natural Query Language</h1>
+    <p>Digite sua query em NQL e veja o resultado em SQL.</p>
+    <hr>
+    <div class="row">
+      <div class="col-lg-6">
+        <pre id="input"></pre>
+      </div>
+      <div class="col-lg-6">
+        <pre id="output"></pre>
+      </div>    
     </div>
-    <div class="col-lg-6">
-      <pre id="output"></pre>
-    </div>    
+    <p>
+    <p><a class="btn btn-primary" href=# id="calculate">Executar</a>
+    <p>
+    <div style="width:400px; margin:0 auto; height:150px; overflow:auto">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Palavras reconhecidas pelo sistema.</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for feed in feeds %}
+          <tr>
+            <td>{{ feed.title }}</td>
+            <td>{{ feed.text }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
   </div>
+</div>
+<div id="footer">
   <p>
-  <p><a class="btn btn-primary" href=# id=calculate>Executar</a>
+  <p class="text-center">Contato: daniel@blando.com.br
+  <p>
 </div>
 {% endblock %}
