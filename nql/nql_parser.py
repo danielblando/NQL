@@ -233,6 +233,10 @@ def isInstanceEqualClass(a,b):
 def p_error(p, stack):
     parse_error(p, stack)
 
+# Error rule for syntax errors
+def p_error(p):
+    raise Exception('We could not recognize - ' + p.value)
+
 # Build the parser
 parser = yacc.yacc(debug=True)
 
