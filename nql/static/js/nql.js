@@ -34,7 +34,7 @@ var submit_form = function(e) {
   }
   else
   {
-    output.session.setValue('');
+    output.session.setValue('Favor inserir entrada.');
   }
   return false;
 };

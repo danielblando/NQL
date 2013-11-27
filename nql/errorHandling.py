@@ -8,13 +8,15 @@ def parse_error(p, stack):
 		erro_select(p.value)
 	elif 'columnsFuncListRec' in stack:
 		erro_colmunFuncListRec(p.value)
-
+	elif 'claWhere' in stack:
+		erro_claWhere(p.value)
 	quit()
-#	raise Exception("Syntax error in input! - " + repr(p))
 
 def erro_select(p):
-	raise Exception('You possibly forget to put the select statment. We could not recognize - ' + p)
+	raise Exception('You possibly forget or insert the select statment wrong. We could not recognize - ' + p)
 
 def erro_colmunFuncListRec(p):
-	raise Exception('You possibly get your list of columns and/or function wrong. We could not recognize - ' + p)
+	raise Exception('You possibly get your list of columns and/or functions wrong. We could not recognize - ' + p)
 
+def erro_claWhere(p):
+	raise Exception('You possibly forget or insert the from statment wrong. We could not recognize - ' + p)
