@@ -6,7 +6,7 @@
     Um servidor simples para facilitar a demonstracao do projeto.
 """
 import json
-from nql_parser import parser
+from nqlNltk import queryTreat
 from flask import Flask, jsonify, render_template, request
 app = Flask(__name__)
 
@@ -18,7 +18,7 @@ def add_numbers():
     #a = request.args.get('a', 0, type=int)
     #b = request.args.get('b', 0, type=int)
     try:
-        r = parser.parse(query)
+        r = queryTreat(query)
     except Exception, e:
         r = str(e)
     print 'Query:', query
