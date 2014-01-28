@@ -6,20 +6,19 @@ import nltk
 
 from nql_parser import parser
 
+from wordRoot import stems
+
 from nltk.metrics.distance import (jaccard_distance, fractional_presence)
 
 
 def teste():
-  return checkSelect("selecasea")
+  return checkStemmer("selecasea")
 
-def checkSelect(word):
-  select = 'selec'
-  result = stem(word)
-  if result.find(select) != -1:
-    return "selecionar"
-  else:
-    return word
-
+def checkStemmer(word):
+  for originalWord, root in stems.iteritems():
+    if stem(word).find(root) != -1:
+      return originalWord
+  return word
 
 
 def stem(word):
@@ -32,7 +31,7 @@ def queryTreat(query):
   query_tokenized = nltk.word_tokenize(query)
   print query_tokenized
   for word in query_tokenized:
-   result_query = result_query + checkSelect(word) + " "
+    result_query = result_query + checkStemmer(word) + " "
   print result_query
   return parser.parse(result_query)
 

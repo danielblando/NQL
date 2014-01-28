@@ -18,7 +18,25 @@ result = Result("")
 def AddTextToResult(s):
 	result.query = result.query + s + ' '
 
-def AddTextOfFunc(condToken):
+def AddTextOfFunc(funcToken):
+	if funcToken is FuncToken.COUNT:
+		AddTextToResult("COUNT")
+	elif funcToken is FuncToken.AVG:
+		AddTextToResult("AVG")
+	elif funcToken is FuncToken.MIN:
+		AddTextToResult("MIN")
+	elif funcToken is FuncToken.MAX:
+		AddTextToResult("MAX")
+	elif funcToken is FuncToken.SUM:
+		AddTextToResult("SUM")
+	elif funcToken is FuncToken.FIRST:
+		AddTextToResult("FIRST")
+	elif funcToken is FuncToken.LAST:
+		AddTextToResult("LAST")
+	elif funcToken is FuncToken.LEN:
+		AddTextToResult("LEN")
+
+def AddTextOfCond(condToken):
 	if condToken is CondToken.EQUALEQUAL:
 		AddTextToResult("==")
 	elif condToken is CondToken.LESSTHAN:
@@ -76,7 +94,7 @@ def SqlColumnFuncListRec(columnFuncListRecNo):
 def SqlColumnFuncList(columnFuncListNo):
 	SqlPrint("Funcao SqlColumnFuncList inicio")
 	if columnFuncListNo.funcToken is not None:
-		AddTextOfFunc(columnFuncListNo.function.token)
+		AddTextOfFunc(columnFuncListNo.funcToken)
 		AddTextToResult("(")
 		AddTextToResult(columnFuncListNo.value)
 		AddTextToResult(")")
@@ -154,7 +172,7 @@ def SqlCondListRec(condListRecNo):
 def SqlCondList(condListNo):
 	SqlPrint("Funcao SqlCondList inicio")
 	SqlExp(condListNo.firstExp)
-	AddTextOfFunc(condListNo.condToken)
+	AddTextOfCond(condListNo.condToken)
 	SqlExp(condListNo.secondExp)
 	SqlPrint("Funcao SqlCondList fim")
 

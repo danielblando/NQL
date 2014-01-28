@@ -6,11 +6,19 @@ import ply.lex as lex
 
 reserved = {
   'selecionar' : 'TK_SELECT',
+  'apresentar' : 'TK_SELECT',
+  'apresente' : 'TK_SELECT', 
+  'mostrar' : 'TK_SELECT',
   'inserir' : 'TK_INSERT',
   'atualizar' : 'TK_UPDATE',
   'apagar' : 'TK_DELETE',
+  'deletar' : 'TK_DELETE',
   
   'de' : 'TK_FROM',
+  'da' : 'TK_FROM',
+  'das' : 'TK_FROM',
+  'do' : 'TK_FROM',
+  'dos' : 'TK_FROM',
   'e' : 'TK_AND',
 
   'com' : 'TK_WHERE',

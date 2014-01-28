@@ -1,7 +1,7 @@
 from nql_lexer import lexer
 
 # Test it out
-data = ''' selecionar idade de alunos '''
+data = ''' selecionar idade dos alunos '''
 
 # Give the lexer some input
 lexer.input(data)

@@ -1,1 +1,11 @@
-selecionarei, selec
+stems = {'selecionar': 'selec',
+'apresentar':'apresent',
+'mostrar':'mostr',
+'inserir': 'inser',
+'atualizar': 'atual',
+'apagar': 'apag',
+'deletar': 'delet',
+'agrupar': 'agrup',
+'ter': 'ter',
+'ordernar': 'orden',
+'ligar': 'lig'}
