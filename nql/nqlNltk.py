@@ -5,8 +5,9 @@
 import nltk
 
 from nql_parser import parser
-
 from nltk.metrics.distance import (jaccard_distance, fractional_presence)
+
+from spelling import correct
 
 
 def teste():
@@ -37,6 +38,6 @@ def queryTreat(query):
   return parser.parse(result_query)
 
 
-
-
-
+def spellcheck(query):
+  words = nltk.word_tokenize(query)
+  return [(word, correct(word)) for word in words]
