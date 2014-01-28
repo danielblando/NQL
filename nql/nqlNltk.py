@@ -40,4 +40,15 @@ def queryTreat(query):
 
 def spellcheck(query):
   words = nltk.word_tokenize(query)
-  return [(word, correct(word)) for word in words]
+
+  corrections = []
+
+  wrong = False
+  for word in words:
+    corrections.append((word, correct(word)))
+    if word != correct(word):
+      wrong = True
+  # corrections = [(word, correct(word)) for word in words]
+  # wrong = filter(lambda p: p[0] != p[1], corrections) > 0
+
+  return (corrections, wrong)

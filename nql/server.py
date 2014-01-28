@@ -16,10 +16,10 @@ feeds = json.load(open("feeds.json"))
 def add_numbers():
     query = request.args.get('query', '')
 
-    corrections = spellcheck(query)
+    corrections, wrong = spellcheck(query)
 
     try:
-        if len(corrections) > 0:
+        if wrong:
             print map(lambda p: {'wrong': p[0], 'right': p[1]}, corrections)
             print '-'
             print jsonify(map(lambda p: {'wrong': p[0], 'right': p[1]}, corrections))
