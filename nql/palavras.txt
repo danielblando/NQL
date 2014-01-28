@@ -8,6 +8,10 @@ inserir
 atualizar
 apagar
 de
+dos
+do
+da
+das
 e
 com
 agrupar
