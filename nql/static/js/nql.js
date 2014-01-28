@@ -22,12 +22,28 @@ var submit_form = function(e) {
   var vInput = input.session.getValue();
   if(vInput != '')
   {
-    $.getJSON($SCRIPT_ROOT + '/_add_numbers', {
+    $.getJSON($SCRIPT_ROOT + '/run_query', {
       query: input.session.getValue()
       //b: $('input[name="b"]').val(),
     }, function(data) {
+      console.log(data);
       console.log(data.result);
-      output.session.setValue(String(data.result));
+      var sentence = [];
+      if (data.result == 'error') {
+        for (var i = 0; i < data.corrections.length; i++) {
+          var right = data.corrections[i].right;
+          var wrong = data.corrections[i].wrong;
+
+          if (right != wrong && confirm('Deseja corrigir "' + wrong + '" para "' + right + '"?')) {
+            wrong = right;
+          }
+          sentence.push(wrong);
+          input.session.setValue(sentence.join(' '));
+        };
+      } else {
+        output.session.setValue(String(data.result));
+      }
+      //alert("Confira a query e pressione 'Executar' novamente.");
       //$('#result').text(data.result);
       //$('input[name=a]').focus().select();
     });

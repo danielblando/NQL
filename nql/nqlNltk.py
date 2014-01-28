@@ -10,6 +10,8 @@ from wordRoot import stems
 
 from nltk.metrics.distance import (jaccard_distance, fractional_presence)
 
+from spelling import correct
+
 
 def teste():
   return checkStemmer("selecasea")
@@ -36,6 +38,6 @@ def queryTreat(query):
   return parser.parse(result_query)
 
 
-
-
-
+def spellcheck(query):
+  words = nltk.word_tokenize(query)
+  return [(word, correct(word)) for word in words]
