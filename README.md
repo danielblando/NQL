@@ -1,10 +1,10 @@
-NLP - Natural Language Processing
+NQL - Natural Query Language
 ============
 
 Meu projeto final - parse de linguagel natural para SQL
 
 Hosted
-- http://nlp.blando.com.br
+- http://nql.blando.com.br
 
 Initialize server
 - cd nql
