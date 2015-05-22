@@ -1,0 +1,99 @@
+// Place all the styles related to the forum controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.topic
+{
+	margin:10px;
+	margin-left:40px;
+	margin-top:20px;
+	background-color:#C0C0C0;
+	padding:3px;
+	padding-left:8px;
+	border-radius:10px;
+	font-size:18px;
+	font-family:verdana;
+}
+
+a:link    {color:black;text-decoration: none;}
+a:visited {color:black;text-decoration: none;}
+a:hover   {color:blue;}
+a:active  {color:black;text-decoration: none;}
+
+#wrap3
+{
+	margin:5px;
+}
+
+#wrap4
+{
+	overflow:auto;
+}
+
+.subtopic 
+{
+	margin:10px;
+	margin-left:60px;
+	margin-top:20px;
+	background-color:#F0F0F0;
+	padding:3px;
+	padding-left:8px;
+	border-radius:10px;
+	font-size:16px;
+	font-family:verdana;
+}
+
+#questiontitle
+{
+	text-align:center;
+	font-size:30px;
+	background-color:#B0B0B0;
+	border-radius:10px;
+	padding:30px;
+	padding-top:40px;
+	padding-bottom:40px;
+}
+
+.questionbody
+{
+	height:30px;
+	text-align:left;
+	margin:15px;
+	padding-top:10px;
+	padding-left:3px;
+	padding-bottom:10px;
+	border-radius:10px;
+	background-color:#F0F0F0;
+}
+
+.comment
+{
+	height:30px;
+	text-align:left;
+	margin:15px;
+	margin-left:50px;
+	margin-bottom:20px;
+	padding-top:10px;
+	padding-left:3px;
+	padding-bottom:10px;
+	border-radius:10px;
+	background-color:#F0F0F0;
+}
+
+.user
+{
+	height:70%;
+	width:15%;
+	position:relative;
+	float:left;
+	text-align:center;
+}
+
+.question
+{
+	height:70%;
+	width:80%;
+	font-size:20px;
+	position:relative;
+	float:right;
+}

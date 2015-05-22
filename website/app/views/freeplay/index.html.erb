@@ -1,0 +1,44 @@
+<div id='wrap'>
+		<div id='tips'>
+			<table width="80%" style='margin-top:120px; margin-left:20px'>
+				<tr>
+					<td >
+						<p>Quick Help</p>
+					</td>
+				</tr>
+			<tr>
+			<td >
+			<!-- Menu/Navigation stuff goes here -->
+			<a href="#">SELECT</a><br><br>
+			<a href="#">UPDATE</a><br><br>
+			<a href="#">INSERT</a><br><br>
+			<a href="#">DELETE</a><br><br><br>
+			<a href="#">CREATE ROLE</a><br><br>
+			<a href="#">CREATE TABLE</a><br><br>
+
+			</td>
+			</tr>
+			</table>
+		</div>
+		
+		<div id='timeline'>
+			<img src=<%="/assets/timeline_example.jpg"%>  >
+		</div>
+		
+		<div id='main'>
+			<div id="historyConsole"></div>
+			<textarea id="console" onkeyup="handleEnter(event, this, document.getElementById('historyConsole'))" ></textarea>
+		</div>
+
+		<div id='img'>
+			<img src=<%="/assets/" + $database+ ".jpg"%> width="100%" height="70%" >
+		</div>
+		
+		<div id='forum'>
+			<a href="<%='/forum/new' %>" >
+				<button class="btn btn-large btn-primary"type="button">Create Question</button>
+			</a>
+		</div>
+</div>
+
+

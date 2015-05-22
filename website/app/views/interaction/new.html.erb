@@ -1,0 +1,26 @@
+<p style="font-size:20px"><b>Nova Resposta</b></p>
+
+<form class="form-horizontal" method="post" name="forum" action ="/interaction/save">
+  <div class="control-group">
+    <label class="control-label" for="description">Descrição</label>
+    <div class="controls">
+      <textarea rows="4" id="description" name="description" style="width:500px"></textarea>
+    </div>
+  </div>
+  <%if ($upperDescription == nil)%>
+  <div class="control-group">
+    <div class="controls">
+      <label class="checkbox">
+        <input type="checkbox" id="snap" name="snap"> Quero usar meu banco atual
+      </label>
+      <button type="submit" class="btn btn-primary">Criar Resposta</button>
+    </div>
+  </div>
+  <%else%>
+	<div class="control-group">
+	    <div class="controls">
+	      <button type="submit" class="btn btn-primary">Criar Resposta</button>
+	    </div>
+	  </div>
+  <%end%>
+</form>

@@ -1,0 +1,636 @@
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateForums (20130630193022)
+Migrating to CreateThemes (20130630193037)
+Migrating to CreateInteractions (20130630193120)
+Migrating to CreateUsers (20130630193127)
+Migrating to CreateDatabases (20130630193156)
+Migrating to CreateSnapshots (20130702171130)
+  [1m[35m (0.4ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36mPK and serial sequence (2.6ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"databases"'::regclass
+[0m
+  [1m[35m (1.6ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, pg_get_indexdef(d.indexrelid), t.oid
+ FROM pg_class t
+ INNER JOIN pg_index d ON t.oid = d.indrelid
+ INNER JOIN pg_class i ON d.indexrelid = i.oid
+ WHERE i.relkind = 'i'
+ AND d.indisprimary = 'f'
+ AND t.relname = 'databases'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname = ANY (current_schemas(false)) )
+ ORDER BY i.relname
+
+  [1m[36mPK and serial sequence (1.6ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"forums"'::regclass
+[0m
+  [1m[35m (1.0ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, pg_get_indexdef(d.indexrelid), t.oid
+ FROM pg_class t
+ INNER JOIN pg_index d ON t.oid = d.indrelid
+ INNER JOIN pg_class i ON d.indexrelid = i.oid
+ WHERE i.relkind = 'i'
+ AND d.indisprimary = 'f'
+ AND t.relname = 'forums'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname = ANY (current_schemas(false)) )
+ ORDER BY i.relname
+
+  [1m[36mPK and serial sequence (1.0ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"interactions"'::regclass
+[0m
+  [1m[35m (0.7ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, pg_get_indexdef(d.indexrelid), t.oid
+ FROM pg_class t
+ INNER JOIN pg_index d ON t.oid = d.indrelid
+ INNER JOIN pg_class i ON d.indexrelid = i.oid
+ WHERE i.relkind = 'i'
+ AND d.indisprimary = 'f'
+ AND t.relname = 'interactions'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname = ANY (current_schemas(false)) )
+ ORDER BY i.relname
+
+  [1m[36mPK and serial sequence (0.9ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"snapshots"'::regclass
+[0m
+  [1m[35m (0.6ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, pg_get_indexdef(d.indexrelid), t.oid
+ FROM pg_class t
+ INNER JOIN pg_index d ON t.oid = d.indrelid
+ INNER JOIN pg_class i ON d.indexrelid = i.oid
+ WHERE i.relkind = 'i'
+ AND d.indisprimary = 'f'
+ AND t.relname = 'snapshots'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname = ANY (current_schemas(false)) )
+ ORDER BY i.relname
+
+  [1m[36mPK and serial sequence (0.9ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"themes"'::regclass
+[0m
+  [1m[35m (0.7ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, pg_get_indexdef(d.indexrelid), t.oid
+ FROM pg_class t
+ INNER JOIN pg_index d ON t.oid = d.indrelid
+ INNER JOIN pg_class i ON d.indexrelid = i.oid
+ WHERE i.relkind = 'i'
+ AND d.indisprimary = 'f'
+ AND t.relname = 'themes'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname = ANY (current_schemas(false)) )
+ ORDER BY i.relname
+
+  [1m[36mPK and serial sequence (0.9ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"users"'::regclass
+[0m
+  [1m[35m (0.6ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, pg_get_indexdef(d.indexrelid), t.oid
+ FROM pg_class t
+ INNER JOIN pg_index d ON t.oid = d.indrelid
+ INNER JOIN pg_class i ON d.indexrelid = i.oid
+ WHERE i.relkind = 'i'
+ AND d.indisprimary = 'f'
+ AND t.relname = 'users'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname = ANY (current_schemas(false)) )
+ ORDER BY i.relname
+
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateForums (20130630193022)
+Migrating to CreateThemes (20130630193037)
+Migrating to CreateInteractions (20130630193120)
+Migrating to CreateUsers (20130630193127)
+Migrating to CreateDatabases (20130630193156)
+Migrating to CreateSnapshots (20130702171130)
+  [1m[35m (0.3ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36mPK and serial sequence (2.6ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"databases"'::regclass
+[0m
+  [1m[35m (1.7ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, pg_get_indexdef(d.indexrelid), t.oid
+ FROM pg_class t
+ INNER JOIN pg_index d ON t.oid = d.indrelid
+ INNER JOIN pg_class i ON d.indexrelid = i.oid
+ WHERE i.relkind = 'i'
+ AND d.indisprimary = 'f'
+ AND t.relname = 'databases'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname = ANY (current_schemas(false)) )
+ ORDER BY i.relname
+
+  [1m[36mPK and serial sequence (1.0ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"forums"'::regclass
+[0m
+  [1m[35m (0.7ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, pg_get_indexdef(d.indexrelid), t.oid
+ FROM pg_class t
+ INNER JOIN pg_index d ON t.oid = d.indrelid
+ INNER JOIN pg_class i ON d.indexrelid = i.oid
+ WHERE i.relkind = 'i'
+ AND d.indisprimary = 'f'
+ AND t.relname = 'forums'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname = ANY (current_schemas(false)) )
+ ORDER BY i.relname
+
+  [1m[36mPK and serial sequence (1.0ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"interactions"'::regclass
+[0m
+  [1m[35m (0.7ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, pg_get_indexdef(d.indexrelid), t.oid
+ FROM pg_class t
+ INNER JOIN pg_index d ON t.oid = d.indrelid
+ INNER JOIN pg_class i ON d.indexrelid = i.oid
+ WHERE i.relkind = 'i'
+ AND d.indisprimary = 'f'
+ AND t.relname = 'interactions'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname = ANY (current_schemas(false)) )
+ ORDER BY i.relname
+
+  [1m[36mPK and serial sequence (0.9ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"snapshots"'::regclass
+[0m
+  [1m[35m (0.7ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, pg_get_indexdef(d.indexrelid), t.oid
+ FROM pg_class t
+ INNER JOIN pg_index d ON t.oid = d.indrelid
+ INNER JOIN pg_class i ON d.indexrelid = i.oid
+ WHERE i.relkind = 'i'
+ AND d.indisprimary = 'f'
+ AND t.relname = 'snapshots'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname = ANY (current_schemas(false)) )
+ ORDER BY i.relname
+
+  [1m[36mPK and serial sequence (0.9ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"themes"'::regclass
+[0m
+  [1m[35m (0.8ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, pg_get_indexdef(d.indexrelid), t.oid
+ FROM pg_class t
+ INNER JOIN pg_index d ON t.oid = d.indrelid
+ INNER JOIN pg_class i ON d.indexrelid = i.oid
+ WHERE i.relkind = 'i'
+ AND d.indisprimary = 'f'
+ AND t.relname = 'themes'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname = ANY (current_schemas(false)) )
+ ORDER BY i.relname
+
+  [1m[36mPK and serial sequence (0.9ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"users"'::regclass
+[0m
+  [1m[35m (0.7ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, pg_get_indexdef(d.indexrelid), t.oid
+ FROM pg_class t
+ INNER JOIN pg_index d ON t.oid = d.indrelid
+ INNER JOIN pg_class i ON d.indexrelid = i.oid
+ WHERE i.relkind = 'i'
+ AND d.indisprimary = 'f'
+ AND t.relname = 'users'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname = ANY (current_schemas(false)) )
+ ORDER BY i.relname
+
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateForums (20130630193022)
+Migrating to CreateThemes (20130630193037)
+Migrating to CreateInteractions (20130630193120)
+Migrating to CreateUsers (20130630193127)
+Migrating to CreateDatabases (20130630193156)
+Migrating to CreateSnapshots (20130702171130)
+  [1m[35m (0.3ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36mPK and serial sequence (2.3ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"databases"'::regclass
+[0m
+  [1m[35m (2.7ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, pg_get_indexdef(d.indexrelid), t.oid
+ FROM pg_class t
+ INNER JOIN pg_index d ON t.oid = d.indrelid
+ INNER JOIN pg_class i ON d.indexrelid = i.oid
+ WHERE i.relkind = 'i'
+ AND d.indisprimary = 'f'
+ AND t.relname = 'databases'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname = ANY (current_schemas(false)) )
+ ORDER BY i.relname
+
+  [1m[36mPK and serial sequence (1.5ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"forums"'::regclass
+[0m
+  [1m[35m (0.7ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, pg_get_indexdef(d.indexrelid), t.oid
+ FROM pg_class t
+ INNER JOIN pg_index d ON t.oid = d.indrelid
+ INNER JOIN pg_class i ON d.indexrelid = i.oid
+ WHERE i.relkind = 'i'
+ AND d.indisprimary = 'f'
+ AND t.relname = 'forums'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname = ANY (current_schemas(false)) )
+ ORDER BY i.relname
+
+  [1m[36mPK and serial sequence (0.9ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"interactions"'::regclass
+[0m
+  [1m[35m (1.1ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, pg_get_indexdef(d.indexrelid), t.oid
+ FROM pg_class t
+ INNER JOIN pg_index d ON t.oid = d.indrelid
+ INNER JOIN pg_class i ON d.indexrelid = i.oid
+ WHERE i.relkind = 'i'
+ AND d.indisprimary = 'f'
+ AND t.relname = 'interactions'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname = ANY (current_schemas(false)) )
+ ORDER BY i.relname
+
+  [1m[36mPK and serial sequence (1.0ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"snapshots"'::regclass
+[0m
+  [1m[35m (0.7ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, pg_get_indexdef(d.indexrelid), t.oid
+ FROM pg_class t
+ INNER JOIN pg_index d ON t.oid = d.indrelid
+ INNER JOIN pg_class i ON d.indexrelid = i.oid
+ WHERE i.relkind = 'i'
+ AND d.indisprimary = 'f'
+ AND t.relname = 'snapshots'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname = ANY (current_schemas(false)) )
+ ORDER BY i.relname
+
+  [1m[36mPK and serial sequence (1.0ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"themes"'::regclass
+[0m
+  [1m[35m (0.8ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, pg_get_indexdef(d.indexrelid), t.oid
+ FROM pg_class t
+ INNER JOIN pg_index d ON t.oid = d.indrelid
+ INNER JOIN pg_class i ON d.indexrelid = i.oid
+ WHERE i.relkind = 'i'
+ AND d.indisprimary = 'f'
+ AND t.relname = 'themes'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname = ANY (current_schemas(false)) )
+ ORDER BY i.relname
+
+  [1m[36mPK and serial sequence (0.9ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"users"'::regclass
+[0m
+  [1m[35m (0.7ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, pg_get_indexdef(d.indexrelid), t.oid
+ FROM pg_class t
+ INNER JOIN pg_index d ON t.oid = d.indrelid
+ INNER JOIN pg_class i ON d.indexrelid = i.oid
+ WHERE i.relkind = 'i'
+ AND d.indisprimary = 'f'
+ AND t.relname = 'users'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname = ANY (current_schemas(false)) )
+ ORDER BY i.relname
+
+Connecting to database specified by database.yml
+  [1m[36m (0.7ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateForums (20130630193022)
+Migrating to CreateThemes (20130630193037)
+Migrating to CreateInteractions (20130630193120)
+Migrating to CreateUsers (20130630193127)
+Migrating to CreateDatabases (20130630193156)
+Migrating to CreateSnapshots (20130702171130)
+  [1m[35m (0.3ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36mPK and serial sequence (1.7ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"databases"'::regclass
+[0m
+  [1m[35m (1.7ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, pg_get_indexdef(d.indexrelid), t.oid
+ FROM pg_class t
+ INNER JOIN pg_index d ON t.oid = d.indrelid
+ INNER JOIN pg_class i ON d.indexrelid = i.oid
+ WHERE i.relkind = 'i'
+ AND d.indisprimary = 'f'
+ AND t.relname = 'databases'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname = ANY (current_schemas(false)) )
+ ORDER BY i.relname
+
+  [1m[36mPK and serial sequence (1.0ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"forums"'::regclass
+[0m
+  [1m[35m (0.7ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, pg_get_indexdef(d.indexrelid), t.oid
+ FROM pg_class t
+ INNER JOIN pg_index d ON t.oid = d.indrelid
+ INNER JOIN pg_class i ON d.indexrelid = i.oid
+ WHERE i.relkind = 'i'
+ AND d.indisprimary = 'f'
+ AND t.relname = 'forums'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname = ANY (current_schemas(false)) )
+ ORDER BY i.relname
+
+  [1m[36mPK and serial sequence (0.9ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"interactions"'::regclass
+[0m
+  [1m[35m (0.7ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, pg_get_indexdef(d.indexrelid), t.oid
+ FROM pg_class t
+ INNER JOIN pg_index d ON t.oid = d.indrelid
+ INNER JOIN pg_class i ON d.indexrelid = i.oid
+ WHERE i.relkind = 'i'
+ AND d.indisprimary = 'f'
+ AND t.relname = 'interactions'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname = ANY (current_schemas(false)) )
+ ORDER BY i.relname
+
+  [1m[36mPK and serial sequence (1.5ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"snapshots"'::regclass
+[0m
+  [1m[35m (0.7ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, pg_get_indexdef(d.indexrelid), t.oid
+ FROM pg_class t
+ INNER JOIN pg_index d ON t.oid = d.indrelid
+ INNER JOIN pg_class i ON d.indexrelid = i.oid
+ WHERE i.relkind = 'i'
+ AND d.indisprimary = 'f'
+ AND t.relname = 'snapshots'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname = ANY (current_schemas(false)) )
+ ORDER BY i.relname
+
+  [1m[36mPK and serial sequence (0.9ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"themes"'::regclass
+[0m
+  [1m[35m (0.7ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, pg_get_indexdef(d.indexrelid), t.oid
+ FROM pg_class t
+ INNER JOIN pg_index d ON t.oid = d.indrelid
+ INNER JOIN pg_class i ON d.indexrelid = i.oid
+ WHERE i.relkind = 'i'
+ AND d.indisprimary = 'f'
+ AND t.relname = 'themes'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname = ANY (current_schemas(false)) )
+ ORDER BY i.relname
+
+  [1m[36mPK and serial sequence (0.9ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"users"'::regclass
+[0m
+  [1m[35m (0.7ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, pg_get_indexdef(d.indexrelid), t.oid
+ FROM pg_class t
+ INNER JOIN pg_index d ON t.oid = d.indrelid
+ INNER JOIN pg_class i ON d.indexrelid = i.oid
+ WHERE i.relkind = 'i'
+ AND d.indisprimary = 'f'
+ AND t.relname = 'users'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname = ANY (current_schemas(false)) )
+ ORDER BY i.relname
+
