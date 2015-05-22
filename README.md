@@ -10,3 +10,11 @@ Initialize server
 - cd nql
 - source venv/bin/activate
 - python server.py
+
+
+
+Struct
+- nql-c
+First version of code
+- nql-python
+Second and finally version
