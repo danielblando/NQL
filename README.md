@@ -11,8 +11,6 @@ Initialize server
 - source venv/bin/activate
 - python server.py
 
-
-
 Struct
 - Studies
 Studies made for my final project
