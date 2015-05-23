@@ -12,7 +12,5 @@ Initialize server
 - python server.py
 
 Struct
-- Studies
-Studies made for my final project
-- nql-python
-Second and finally version
+- Studies made for my final project
+- nql-python - Second and finally version
