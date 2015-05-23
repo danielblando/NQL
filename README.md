@@ -14,7 +14,7 @@ Initialize server
 
 
 Struct
-- nql-c
-First version of code
+- Studies
+Studies made for my final project
 - nql-python
 Second and finally version
