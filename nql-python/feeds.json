@@ -1,0 +1,50 @@
+[
+	{
+		"title": "Selecionar",
+		"text": "Select"
+	},
+	{
+		"title": "Apresentar",
+		"text": "Select"
+	},
+	{
+		"title": "Mostar",
+		"text": "Select"
+	},
+	{
+		"title": "De",
+		"text": "From"
+	},
+	{
+		"title": "Com",
+		"text": "Where"
+	},
+	{
+		"title": "Ordernar",
+		"text": "Orderby"
+	},
+	{
+		"title": "Agrupar",
+		"text": "Group by"
+	},
+	{
+		"title": "Soma",
+		"text": "Sum"
+	},
+	{
+		"title": "Primeiro",
+		"text": "First"
+	},
+	{
+		"title": "Ultimo",
+		"text": "Last"
+	},
+	{
+		"title": "Quantidade",
+		"text": "Count"
+	},
+	{
+		"title": "__tudo",
+		"text": "*"
+	}
+]
